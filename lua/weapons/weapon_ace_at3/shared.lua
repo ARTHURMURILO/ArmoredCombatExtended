@@ -2,9 +2,9 @@
 	AT-3 - shoulder-fired 9K11 Malyutka launcher.
 
 	Reuses the AT-4's view/world models and shooting feel, but the projectile is
-	an ACE missile instead of a dumb rocket. The missile uses ACE's Beam_Riding
-	guidance with the player as launcher, so keeping the crosshair on the target
-	steers it.
+	an ACE missile instead of a dumb rocket. The missile is steered by keeping
+	the crosshair on the target: the player's eye position/aim and the aim-point
+	are forwarded to whichever ACE guidance package the missile supports.
 
 	Press R with a missile loaded to pick and tune one of the man-portable ATGMs
 	(Sagger, Konkurs, Spike-LR). Motor, warhead and guidance parameters are
@@ -82,26 +82,36 @@ local MISSILE_PRESETS = {
 		label = "AT-3",
 		blurb = "9M14 Malyutka. Very slow, light and nimble: the original Sagger. Keep the crosshair on the target and the missile follows the beam.",
 		projLength = 14,
-		filler = 850,
+		filler = 1000,
 		cone = 50,
-		power = 2.8,
+		launchKick = 90,
 	},
 	["9M113 ATGM"] = {
 		label = "9M113",
 		blurb = "Konkurs. Heavier warhead and a faster motor than the Sagger, at the cost of some agility.",
 		projLength = 16,
-		filler = 1150,
+		filler = 1500,
 		cone = 50,
-		power = 2.4,
+		launchKick = 100,
 	},
 	["Spike-LR ASM"] = {
 		label = "Spike-LR",
 		blurb = "Spike LR. Long range and very agile, a good candidate if you want to steer a fast missile onto moving vehicles.",
 		projLength = 20,
-		filler = 1700,
+		filler = 3000,
 		cone = 55,
-		power = 2.0,
+		launchKick = 110,
 	},
+}
+
+--Human readable labels for ACE's guidance packages.
+local GUIDANCE_LABELS = {
+	Dumb = "Dumb (fly straight)",
+	Wire = "Wire (aim-point, 500 m wire)",
+	Beam_Riding = "Beam riding (steer with aim)",
+	Laser = "Laser (aim-point, needs line of sight)",
+	Infrared = "Infrared (heat seeker)",
+	Top_Attack_IR = "Top attack (IR seeker)",
 }
 
 local BLAST_RADIUS_EXPONENT = 0.33
@@ -189,14 +199,39 @@ function SWEP:EnsureAmmoDefs()
 				end
 			end
 
+			local guidanceOptions = {}
+
+			for index, guidanceName in ipairs( gun.guidance or {} ) do
+				guidanceOptions[index] = guidanceName
+			end
+
+			if #guidanceOptions == 0 then
+				guidanceOptions = { "Dumb" }
+			end
+
+			--Prefer the aim-driven packages for a handheld launcher, but fall back
+			--to whatever the missile actually supports (Spike-LR has no beam rider).
+			local defaultGuidance = guidanceOptions[1]
+
+			for _, candidate in ipairs( { "Beam_Riding", "Laser", "Wire", "Dumb" } ) do
+				for _, available in ipairs( guidanceOptions ) do
+					if available == candidate then
+						defaultGuidance = candidate
+						break
+					end
+				end
+
+				if defaultGuidance == candidate then break end
+			end
+
 			local preset = {
 				Warhead = warheads[1],
-				Guidance = "Beam_Riding",
+				Guidance = defaultGuidance,
 				PropLength = 1,
 				ProjLength = special.projLength,
 				Data5 = special.filler,
 				Data6 = special.cone,
-				LaunchKick = round.launchkick or 10,
+				LaunchKick = special.launchKick or round.launchkick or 10,
 				Thrust = round.thrust or 20,
 				BurnTime = round.burntime or 8,
 				TurnRate = round.turnrate or 30,
@@ -205,7 +240,6 @@ function SWEP:EnsureAmmoDefs()
 				BoostAccel = round.boostacceleration or 0,
 				BoostTime = round.boostertime or 0,
 				Drag = round.dragcoef or 0.002,
-				WarheadPower = special.power,
 			}
 
 			defs[id] = {
@@ -221,7 +255,7 @@ function SWEP:EnsureAmmoDefs()
 					ProjLength = { 0.01, 80 },
 					Data5 = { 0, 20000 },
 					Data6 = { 0, 180 },
-					LaunchKick = { 0, 150 },
+					LaunchKick = { 20, 250 },
 					Thrust = { 0, 300 },
 					BurnTime = { 0, 40 },
 					TurnRate = { 0, 600 },
@@ -230,7 +264,6 @@ function SWEP:EnsureAmmoDefs()
 					BoostAccel = { 0, 1200 },
 					BoostTime = { 0, 3 },
 					Drag = { 0, 0.05 },
-					WarheadPower = { 0.25, 4 },
 				},
 				clamped = {
 					ProjLength = "ProjLength",
@@ -247,11 +280,8 @@ function SWEP:EnsureAmmoDefs()
 					{
 						key = "Guidance",
 						title = "Guidance",
-						options = { "Beam_Riding", "Dumb" },
-						optionLabels = {
-							Beam_Riding = "Beam riding (steer with aim)",
-							Dumb = "Dumb (fly straight)",
-						},
+						options = guidanceOptions,
+						optionLabels = GUIDANCE_LABELS,
 					},
 				},
 				sliders = function( swep, params )
@@ -291,20 +321,7 @@ function SWEP:EnsureAmmoDefs()
 						}
 					end
 
-					sliders[#sliders + 1] = {
-						key = "WarheadPower",
-						title = "Warhead power",
-						suffix = "x",
-						decimals = 2,
-						min = 0.25,
-						max = 4,
-						info = function( data )
-							local pen = SlugPenetration( data )
-							return pen > 0 and string.format( "%d mm shaped charge", math.floor( pen + 0.5 ) ) or "blast warhead"
-						end,
-					}
-
-					sliders[#sliders + 1] = { key = "LaunchKick", title = "Launch speed", suffix = "m/s", decimals = 0, min = 0, max = 150 }
+					sliders[#sliders + 1] = { key = "LaunchKick", title = "Launch booster speed", suffix = "m/s", decimals = 0, min = 20, max = 250 }
 					sliders[#sliders + 1] = { key = "Thrust", title = "Motor thrust", suffix = "m/s2", decimals = 0, min = 0, max = 300 }
 					sliders[#sliders + 1] = { key = "BurnTime", title = "Motor burn time", suffix = "s", decimals = 1, min = 0, max = 40 }
 					sliders[#sliders + 1] = { key = "TurnRate", title = "Airframe turn rate", suffix = "deg", decimals = 0, min = 0, max = 600 }
@@ -323,8 +340,8 @@ function SWEP:EnsureAmmoDefs()
 						particles[#particles + 1] = string.format( "%.1f m blast", BlastRadius( data ) )
 					end
 
-					if ( params.Guidance or "Beam_Riding" ) == "Beam_Riding" then
-						particles[#particles + 1] = "beam riding"
+					if params.Guidance then
+						particles[#particles + 1] = string.lower( params.Guidance )
 					end
 
 					return table.concat( particles, "  -  " )
@@ -377,14 +394,7 @@ function SWEP:BuildAmmoData( params )
 	data.AmmoType = warhead
 	data.Colour = warhead == "HE" and Color( 255, 90, 40 ) or Color( 255, 140, 40 )
 
-	--The conversion produces ACE's stock shaped-charge numbers. Missiles are
-	--balanced against their definition cards with an explicit multiplier so the
-	--Sagger actually threatens armour instead of scratching paint.
-	local power = math.Clamp( tonumber( params.WarheadPower ) or 1, 0.25, 4 )
-
-	if data.SlugMV then data.SlugMV = data.SlugMV * power end
-	if data.SlugMV2 then data.SlugMV2 = data.SlugMV2 * power end
-
+	--Warhead numbers are ACE's own conversion results; no hidden multipliers.
 	if not data.BoomFillerMass then
 		data.BoomFillerMass = data.FillerMass or 0
 	end
@@ -481,17 +491,18 @@ function SWEP:GetAmmoSummary()
 end
 
 
---- Attaches a server-side aim proxy to a beam-riding missile.
--- ACE's Beam_Riding guidance follows its guidance entity's origin and forward
--- vector. Using the player entity directly would aim from the feet, a metre
--- below the crosshair, so the missile follows a small proxy placed at the eye
--- position and rotated to the view angles instead.
+--- Makes the missile follow the player's eyes and aim-point.
+-- ACE's guidance packages read `missile.Launcher`: aim-point packages (Wire,
+-- Laser) read Launcher.TargPos, beam riding reads the launcher entity's origin
+-- and forward vector, and Configure() re-runs on the missile's first think. A
+-- small invisible proxy at the eye position therefore has to *become* the
+-- launcher; the player entity itself would aim from the feet and has no TargPos.
+-- Damage/ownership stays on DamageOwner/BulletData, so this only affects steering.
 -- @param owner Entity The firing player.
 -- @param missile Entity The spawned missile.
 -- @return boolean True when the proxy was attached.
 function SWEP:AttachAimProxy( owner, missile )
 	if not SERVER or not IsValid( owner ) or not IsValid( missile ) then return false end
-	if not missile.Guidance then return false end
 
 	local proxy = ents.Create( "info_target" )
 
@@ -503,6 +514,15 @@ function SWEP:AttachAimProxy( owner, missile )
 	proxy:SetNoDraw( true )
 	proxy:SetNotSolid( true )
 	proxy:SetCollisionGroup( COLLISION_GROUP_IN_VEHICLE )
+
+	local traceData = {
+		filter = { owner },
+		start = owner:GetShootPos(),
+		endpos = owner:GetShootPos() + owner:GetAimVector() * 50000,
+	}
+
+	local trace = util.TraceLine( traceData )
+	proxy.TargPos = trace.Hit and trace.HitPos or traceData.endpos
 
 	local hookName = "ACE_AT3_AimProxy_" .. proxy:EntIndex()
 
@@ -517,17 +537,27 @@ function SWEP:AttachAimProxy( owner, missile )
 			return
 		end
 
-		if IsValid( owner ) and owner:Alive() then
-			proxy:SetPos( owner:GetShootPos() )
-			proxy:SetAngles( owner:GetAimVector():Angle() )
-		end
+		if not IsValid( owner ) or not owner:Alive() then return end
+
+		local shootPos = owner:GetShootPos()
+		local aimVector = owner:GetAimVector()
+
+		proxy:SetPos( shootPos )
+		proxy:SetAngles( aimVector:Angle() )
+
+		traceData.start = shootPos
+		traceData.endpos = shootPos + aimVector * 50000
+
+		local aimTrace = util.TraceLine( traceData )
+
+		proxy.TargPos = aimTrace.Hit and aimTrace.HitPos or traceData.endpos
 	end )
 
 	if missile.DeleteOnRemove then
 		missile:DeleteOnRemove( proxy )
 	end
 
-	missile.Guidance.GuidanceEntity = proxy
+	missile.Launcher = proxy
 
 	return true
 end
@@ -555,16 +585,18 @@ function SWEP:LaunchMissile( owner )
 	crate:RegisterTo( bdata )
 	bdata.Crate = crate:EntIndex()
 
-	local guidance = params.Guidance == "Dumb" and "Dumb" or "Beam_Riding"
+	local guidance = params.Guidance or "Dumb"
+
+	--Slight loft: the first moments of a slow ATGM would otherwise sink into the
+	--ground before the motor builds enough speed for the guidance to hold it up.
+	local launchAngle = owner:GetAimVector():Angle() + Angle( -2, 0, 0 )
 
 	local MDat = {
 		Owner = owner,
 		Launcher = owner,
 
-		--Spawn clear of the player but close enough that the launch still looks
-		--like it comes from the tube.
-		Pos = owner:GetShootPos() + owner:GetAimVector() * 900,
-		Ang = owner:GetAimVector():Angle(),
+		Pos = owner:GetShootPos() + owner:GetAimVector() * 200,
+		Ang = launchAngle,
 
 		Mdl = round.rocketmdl or def.gun.model,
 
@@ -589,7 +621,7 @@ function SWEP:LaunchMissile( owner )
 		HasDatalink = round.datalink or false,
 
 		ArmDelay = def.gun.armdelay or 0.15,
-		DelayPrediction = round.predictiondelay or 0.3,
+		DelayPrediction = 0.2,
 		ArmorThickness = round.armour or 15,
 
 		MotorSound = "acf_extra/airfx/rocket_fire.wav",
@@ -605,9 +637,19 @@ function SWEP:LaunchMissile( owner )
 	--delay; restore the definition's numbers so long slow shots survive.
 	missile.Lifetime = round.fusetime or 20
 
-	if guidance == "Beam_Riding" then
-		missile.GuidanceActivationDelay = 0.25
+	if guidance ~= "Dumb" then
+		missile.GuidanceActivationDelay = 0.15
 		self:AttachAimProxy( owner, missile )
+	end
+
+	self.LastLaunchInfo = string.format( "%s %s guidance=%s kick=%s",
+		tostring( params.Type ), tostring( bdata.Type ), string.lower( guidance ),
+		tostring( params.LaunchKick ) )
+
+	if GetConVar( "ace_launcher_debug" ):GetBool() then
+		print( string.format( "[ACE-LAUNCHER] AT-3 fired %s (%s) guidance=%s booster=%s m/s missile=%s",
+			tostring( params.Type ), tostring( bdata.Type ), tostring( guidance ),
+			tostring( params.LaunchKick ), tostring( IsValid( missile ) ) ) )
 	end
 end
 

@@ -90,6 +90,15 @@ local function BlastRadius( data )
 end
 
 
+local function TandemSecondPen( data )
+	if not ( data and data.SlugMV2 and data.SlugMass2 and data.SlugPenArea2 ) then return 0 end
+
+	local energy = ACE.Kinetic( data.SlugMV2 * 39.37, data.SlugMass2, SLUG_LIMIT_VELOCITY )
+
+	return ACE.CalcPenetration( energy, data.SlugPenArea2 ) or 0
+end
+
+
 local function SlugPenetration( data )
 	if not ( data and data.SlugMV and data.SlugMass and data.SlugPenArea ) then return 0 end
 
@@ -141,7 +150,7 @@ SWEP.AmmoDefs = {
 			Data13 = { 0, 180 },
 			Data14 = { 0, 1 },
 		},
-		clamped = { ProjLength = "ProjLength", Data5 = "FillerVol", Data6 = "ConeAng" },
+		clamped = { ProjLength = "ProjLength", Data5 = "FillerVol", Data6 = "ConeAng", Data13 = "ConeAng2", Data14 = "HEAllocation" },
 	},
 	Smoke = {
 		roundType = "SM",
@@ -202,6 +211,31 @@ local function GetSliders( swep, params )
 			decimals = 1,
 			min = 0,
 			max = function( data ) return math.max( data.MaxConeAng or 0, 0.1 ) end,
+		}
+	end
+
+	if params and params.Type == "Tandem" then
+		sliders[#sliders + 1] = {
+			key = "Data13",
+			title = "Second cone angle",
+			suffix = "deg",
+			decimals = 1,
+			min = 0,
+			max = function( data ) return math.max( data.MaxConeAng or 0, 0.1 ) end,
+		}
+
+		sliders[#sliders + 1] = {
+			key = "Data14",
+			title = "Filler split",
+			suffix = "x",
+			decimals = 2,
+			min = 0,
+			max = 1,
+			info = function( data )
+				local second = data.HEAllocation or 0
+
+				return string.format( "%.0f%% first / %.0f%% second charge", ( 1 - second ) * 100, second * 100 )
+			end,
 		}
 	end
 
@@ -292,6 +326,8 @@ function SWEP:GetRowBrief( ammoType, params )
 		effect = "smoke screen"
 	elseif preview.Type == "HE" then
 		effect = string.format( "%.1f m blast", BlastRadius( data ) )
+	elseif preview.Type == "Tandem" then
+		effect = string.format( "%.0f + %.0f mm pen", SlugPenetration( data ), TandemSecondPen( data ) )
 	else
 		effect = string.format( "%.0f mm pen", SlugPenetration( data ) )
 	end
@@ -327,16 +363,24 @@ function SWEP:GetAmmoStatRows( data, params )
 		return rows
 	end
 
+	if params.Type == "Tandem" then
+		local second = 0
+
+		if data.SlugMV2 and data.SlugMass2 and data.SlugPenArea2 then
+			local energy = ACE.Kinetic( data.SlugMV2 * 39.37, data.SlugMass2, SLUG_LIMIT_VELOCITY )
+			second = ACE.CalcPenetration( energy, data.SlugPenArea2 ) or 0
+		end
+
+		rows[#rows + 1] = { title = "First charge", value = string.format( "%.0f mm pen", SlugPenetration( data ) ) }
+		rows[#rows + 1] = { title = "Second charge", value = string.format( "%.0f mm pen", second ) }
+		rows[#rows + 1] = { title = "Blast radius", value = string.format( "%.1f m", BlastRadius( data ) ) }
+
+		return rows
+	end
+
 	rows[#rows + 1] = { title = "HEAT filler", value = string.format( "%d g", filler ) }
 	rows[#rows + 1] = { title = "Penetration", value = string.format( "%.0f mm", SlugPenetration( data ) ) }
 	rows[#rows + 1] = { title = "Blast radius", value = string.format( "%.1f m", BlastRadius( data ) ) }
-
-	if params.Type == "Tandem" and data.SlugMV2 then
-		local energy = ACE.Kinetic( data.SlugMV2 * 39.37, data.SlugMass2 or 1, SLUG_LIMIT_VELOCITY )
-		local second = ACE.CalcPenetration( energy, data.SlugPenArea2 or 1 ) or 0
-
-		rows[#rows + 1] = { title = "Second charge pen", value = string.format( "%.0f mm", second ) }
-	end
 
 	return rows
 end
@@ -358,6 +402,11 @@ function SWEP:GetAmmoSummary()
 
 	if params.Type == "HE" then
 		return string.format( "AT-4 - HE - %d m/s - %.1f m blast", ROCKET_SPEED, BlastRadius( data ) )
+	end
+
+	if params.Type == "Tandem" then
+		return string.format( "AT-4 - TANDEM - %d m/s - %.0f + %.0f mm pen - %.1f m blast",
+			ROCKET_SPEED, SlugPenetration( data ), TandemSecondPen( data ), BlastRadius( data ) )
 	end
 
 	return string.format( "AT-4 - %s - %d m/s - %.0f mm pen - %.1f m blast", string.upper( params.Type ),

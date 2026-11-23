@@ -206,7 +206,7 @@ ACE.Weapons.Guns["Spike-LR ASM"] = {
 	weight = 13,
 	effect = "ACE_MissileSmall",
 	effectbooster = "ACE_MissileSmall",
-	guidance = { "Dumb", "Beam_Riding" },
+	guidance = { "Dumb", "Infrared", "Top_Attack_IR", "Laser" },
 	fuses = { "Contact", "Optical", "Timed", "Altitude" },
 	skinindex = { HEAT = 0 },
 	armdelay = 0.15,
@@ -288,7 +288,9 @@ for _, id in ipairs( at3.AmmoOrder ) do
 	local def = FindPreset( at3, id )
 	assert( def, "missing preset " .. id )
 	assert( def.preset.Warhead == "HEAT", id .. " should default to a HEAT warhead" )
-	assert( def.preset.Guidance == "Beam_Riding", id .. " should default to beam riding" )
+	assert( def.preset.WarheadPower == nil, id .. " should not have an invented warhead-power dial" )
+	assert( def.preset.LaunchKick == ( { ["AT-3 ASM"] = 90, ["9M113 ATGM"] = 100, ["Spike-LR ASM"] = 110 } )[id],
+		id .. " should default to its handheld booster speed" )
 
 	local presetParams = at3:GetPresetParams( id )
 	local ok, data = pcall( at3.BuildAmmoData, at3, presetParams )
@@ -305,7 +307,7 @@ for _, id in ipairs( at3.AmmoOrder ) do
 
 	local energy = Kinetic( data.SlugMV * 39.37, data.SlugMass, 999999 )
 	local pen = CalcPenetration( energy, data.SlugPenArea )
-	assert( pen > 120, string.format( "%s default HEAT should be a real threat, got %.1f mm", id, pen ) )
+	assert( pen > 70 and pen < 260, string.format( "%s default HEAT penetration out of range: %.1f mm", id, pen ) )
 
 	local speed = at3:GetEstimatedTopSpeed( def.preset )
 	AssertFinite( speed, id .. " estimated speed" )
@@ -321,13 +323,27 @@ for _, id in ipairs( at3.AmmoOrder ) do
 	assert( heData.SlugMV == nil, id .. " HE variant should not carry a shaped-charge slug" )
 end
 
+--Guidance options come from the missile definition.
+local saggerGuidance = {}
+
+for _, option in ipairs( at3:GetAmmoDef( "AT-3 ASM" ).dropdowns[2].options ) do
+	saggerGuidance[option] = true
+end
+
+assert( saggerGuidance.Beam_Riding and saggerGuidance.Wire and saggerGuidance.Dumb,
+	"the Sagger should offer its Wire/Beam_Riding/Dumb guidance options" )
+
+local spikeGuidance = at3:GetAmmoDef( "Spike-LR ASM" ).dropdowns[2].options
+assert( #spikeGuidance == 4, "Spike-LR should list all four of its guidance options" )
+assert( spikeGuidance[1] == "Dumb" and spikeGuidance[4] == "Laser", "Spike-LR guidance order should follow the definition" )
+
 --Sanitising keeps clients from sending silly values.
-local params = at3:SanitizeParams( "AT-3 ASM", { Warhead = "Laser", Guidance = "Wire", Data5 = -50, WarheadPower = 99 } )
+local params = at3:SanitizeParams( "AT-3 ASM", { Warhead = "Laser", Guidance = "Laser", Data5 = -50, LaunchKick = 9999 } )
 assert( params, "sanitising a valid preset failed" )
 assert( params.Warhead == "HEAT", "invalid warhead should fall back to the preset" )
-assert( params.Guidance == "Beam_Riding", "invalid guidance should fall back to the preset" )
+assert( params.Guidance == "Beam_Riding", "guidance the Sagger does not support should fall back to its default" )
 assert( params.Data5 == 0, "negative filler volume should clamp to 0" )
-assert( params.WarheadPower == 4, "warhead power should clamp to 4" )
+assert( params.LaunchKick == 250, "booster speed should clamp to 250" )
 assert( at3:SanitizeParams( "not a missile", {} ) == nil, "unknown preset should be rejected" )
 
 --Loading a selection rebuilds the live bullet data and params.
@@ -373,6 +389,25 @@ for _, id in ipairs( at4.AmmoOrder ) do
 		assert( data.Type == "SM", "smoke should convert through the smoke round" )
 	elseif id == "Tandem" then
 		assert( data.SlugMV2, "tandem should have a second charge" )
+
+		local tandemSliders = {}
+		local sliderDefs = def.sliders( at4, at4:GetPresetParams( id ) )
+
+		for _, sliderDef in ipairs( sliderDefs ) do
+			tandemSliders[sliderDef.key] = true
+		end
+
+		assert( tandemSliders.Data13, "tandem should expose the second cone angle" )
+		assert( tandemSliders.Data14, "tandem should expose the filler split" )
+
+		local statRows = at4:GetAmmoStatRows( data, at4:GetPresetParams( id ) )
+		local titles = {}
+
+		for _, row in ipairs( statRows ) do
+			titles[row.title] = true
+		end
+
+		assert( titles["First charge"] and titles["Second charge"], "tandem stats should show both charges" )
 	else
 		local energy = Kinetic( data.SlugMV * 39.37, data.SlugMass, 999999 )
 		local pen = CalcPenetration( energy, data.SlugPenArea )

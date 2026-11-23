@@ -190,10 +190,13 @@ local function CreateComboRow( parent, dropdownDef, onChange )
 
 	--Display-only sync: the parameter is owned by the menu state, so setting
 	--the visible text is enough and avoids firing OnSelect in a loop.
+	--DComboBox stores its entries as parallel Choices (labels) / Data (values)
+	--arrays plus a `selected` index, so mirror that directly.
 	row.SetValue = function( self, value )
-		for _, choice in ipairs( combo.Choices or {} ) do
-			if choice and tostring( choice.data ) == tostring( value ) then
-				combo:SetValue( choice.text )
+		for id = 1, #combo.Choices do
+			if tostring( combo.Data[id] ) == tostring( value ) then
+				combo.selected = id
+				combo:SetText( combo.Choices[id] )
 
 				return
 			end
