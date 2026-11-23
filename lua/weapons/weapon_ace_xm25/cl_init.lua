@@ -63,7 +63,7 @@ function SWEP:DoDrawCrosshair(x, y)
 			surface.DrawText(self:Clip1())
 
 			local ARC = -1 -- +1 for high, -1 for direct fire
-			local GVel = 184.871
+			local GVel = math.max( self.BulletData and self.BulletData.MuzzleVel or 184.871, 1 )
 
 			local calculatedAngle = (math.atan( (GVel^2 + ARC * math.sqrt(GVel^4 - Tg * ( Tg * Tx^2 + 2 * Ty * GVel^2))) / (Tg * Tx) )) * 180 / math.pi
 
