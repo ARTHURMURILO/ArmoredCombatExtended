@@ -1,0 +1,198 @@
+shortname,token,cal_cm,mass_kg,mass_g,mass_source,mass_detail,type,tracer,num,pen_power,eft_damage,printname,pack,file
+eft_ammo_12755_ps12,12755,1.27,0.033,33,description,33 g from description,AP,false,1,28,115,12.7x55mm PS12,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_127x55_bulk.lua
+eft_ammo_12755_ps12a,12755,1.27,0.007,7,description,7 g from description,HP,false,1,1,165,12.7x55mm PS12A,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_127x55_bulk.lua
+eft_ammo_12755_ps12b,12755,1.27,0.018,18,description,18 g from description,AP,false,1,46,102,12.7x55mm PS12B,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_127x55_bulk.lua
+eft_ammo_12x70_50bmg,12x70,1.27,0.0505,50.5,shell,(0.055 kg shell - 0.0045 kg case) / 1 = 50.5 g,AP,true,1,26,197,12/70 makeshift .50 BMG slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_525mm,12x70,0.525,0.000859,0.859,shell,(0.044 kg shell - 0.0045 kg case) / 8 = 4.938 g; capped to lead-sphere mass 0.859 g,HP,false,8,1,37,12/70 5.25mm buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_7mm,12x70,0.7,0.002037,2.037,shell,(0.05 kg shell - 0.0045 kg case) / 8 = 5.688 g; capped to lead-sphere mass 2.037 g,HP,false,8,3,39,12/70 7mm buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_ap20,12x70,1.85,0.0455,45.5,shell,(0.05 kg shell - 0.0045 kg case) / 1 = 45.5 g,AP,false,1,37,164,12/70 AP-20 armor-piercing slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_dual_sabot,12x70,1.85,0.02275,22.75,shell,(0.05 kg shell - 0.0045 kg case) / 2 = 22.75 g,AP,false,2,17,85,12/70 Dual Sabot slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_express,12x70,0.65,0.001631,1.631,shell,(0.048 kg shell - 0.0045 kg case) / 9 = 4.833 g; capped to lead-sphere mass 1.631 g,HP,false,9,3,35,12/70 6.5mm Express buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_flechette,12x70,0.25,0.00047,0.47,override,0.47 g flechette dart (EFT data),AP,false,8,31,25,12/70 flechette,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_ftx,12x70,1.85,0.0215,21.5,shell,(0.026 kg shell - 0.0045 kg case) / 1 = 21.5 g,AP,false,1,2,183,12/70 FTX Custom Lite slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_grizzly40,12x70,1.85,0.0505,50.5,shell,(0.055 kg shell - 0.0045 kg case) / 1 = 50.5 g,AP,false,1,12,19,12/70 Grizzly 40 slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_hpcopper,12x70,1.85,0.0385,38.5,shell,(0.043 kg shell - 0.0045 kg case) / 1 = 38.5 g,HP,false,1,14,206,12/70 Copper Sabot Premier HP slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_magnum,12x70,0.85,0.003646,3.646,shell,(0.059 kg shell - 0.0045 kg case) / 8 = 6.812 g; capped to lead-sphere mass 3.646 g,HP,false,8,2,5,12/70 8.5mm Magnum buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_mixed_50bmg_p3,12x70,1.27,0.045,45,override,average of the two 12/70 slug shell formulas,AP,true,1,,,"12/70 makeshift .50 BMG slug + 12/70 ""Poleva-3"" slug",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_saiga12_bulk.lua
+eft_ammo_12x70_pir,12x70,0.25,0.00046,0.46,override,~2.5 mm x 12 mm steel tack estimate,HP,false,1,24,25,12/70 Piranha,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_poleva3,12x70,1.85,0.0395,39.5,shell,(0.044 kg shell - 0.0045 kg case) / 1 = 39.5 g,AP,false,1,17,14,"12/70 ""Poleva-3"" slug",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_poleva6u,12x70,1.85,0.0435,43.5,shell,(0.048 kg shell - 0.0045 kg case) / 1 = 43.5 g,AP,false,1,2,15,"12/70 ""Poleva-6u"" slug",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_rip,12x70,1.85,0.0355,35.5,shell,(0.04 kg shell - 0.0045 kg case) / 1 = 35.5 g,HP,false,1,2,265,12/70 RIP,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_slug,12x70,1.85,0.0455,45.5,shell,(0.05 kg shell - 0.0045 kg case) / 1 = 45.5 g,AP,false,1,15,167,12/70 lead slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_12x70_superformance,12x70,1.85,0.0295,29.5,shell,(0.034 kg shell - 0.0045 kg case) / 1 = 29.5 g,HP,false,1,5,22,12/70 SuperFormance HP slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ammo_12x70_bulk.lua
+eft_ammo_20x70_56,20x70,0.56,0.001043,1.043,shell,(0.028 kg shell - 0.004 kg case) / 8 = 3 g; capped to lead-sphere mass 1.043 g,HP,false,8,1,26,20/70 5.6mm buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_62,20x70,0.62,0.001415,1.415,shell,(0.032 kg shell - 0.004 kg case) / 8 = 3.5 g; capped to lead-sphere mass 1.415 g,HP,false,8,2,22,20/70 6.2mm buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_73,20x70,0.73,0.00231,2.31,shell,(0.032 kg shell - 0.004 kg case) / 9 = 3.111 g; capped to lead-sphere mass 2.31 g,HP,false,9,3,23,20/70 7.3mm buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_75,20x70,0.75,0.002505,2.505,shell,(0.04 kg shell - 0.004 kg case) / 8 = 4.5 g; capped to lead-sphere mass 2.505 g,HP,false,8,3,25,20/70 7.5mm buckshot,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_devastator,20x70,1.56,0.025,25,shell,(0.029 kg shell - 0.004 kg case) / 1 = 25 g,HP,false,1,5,198,20/70 Devastator slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_elephant,20x70,1.56,0.018,18,override,20 ga hunting slug estimate (18 g),HP,false,1,47,,20/70 Elephant killer slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_explosive,20x70,1.56,0.018,18,override,20 ga slug with explosive filler estimate (18 g),AP,false,1,16,,"20/70 ""explosive"" slug",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_flechette,20x70,0.25,0.00047,0.47,override,0.47 g flechette dart (EFT data estimate),AP,false,8,24,2,20/70 flechette,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_flechplus,20x70,0.25,0.00047,0.47,override,0.47 g flechette dart (EFT data estimate),AP,false,4,45,,"20/70 ""Flechetta Plus""",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_game,20x70,1.56,0.034,34,shell,(0.038 kg shell - 0.004 kg case) / 1 = 34 g,AP,false,1,25,143,20/70 Dangerous Game Slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_poleva3,20x70,1.56,0.025,25,shell,(0.029 kg shell - 0.004 kg case) / 1 = 25 g,AP,false,1,14,12,"20/70 ""Poleva-3"" slug",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_poleva6u,20x70,1.56,0.028,28,shell,(0.032 kg shell - 0.004 kg case) / 1 = 28 g,AP,false,1,17,135,"20/70 ""Poleva-6u"" slug",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_star,20x70,1.56,0.03,30,shell,(0.034 kg shell - 0.004 kg case) / 1 = 30 g,AP,false,1,16,154,20/70 Star slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_20x70_tss,20x70,1.56,0.036,36,shell,(0.04 kg shell - 0.004 kg case) / 1 = 36 g,AP,false,1,3,155,20/70 TSS Armor Piercing Slug,2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_toz106_bulk.lua
+eft_ammo_23x75_bar,23x75,2.3,0.071,71,shell,(0.08 kg shell - 0.009 kg case) / 1 = 71 g,AP,false,1,39,192,"23x75mm ""Barrikada"" slug",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ks23_bulk.lua
+eft_ammo_23x75_sh10,23x75,0.85,0.003646,3.646,shell,(0.08 kg shell - 0.009 kg case) / 8 = 8.875 g; capped to lead-sphere mass 3.646 g,HP,false,8,11,87,"23x75mm ""Shrapnel-10"" buckshot",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ks23_bulk.lua
+eft_ammo_23x75_sh25,23x75,0.85,0.003646,3.646,shell,(0.08 kg shell - 0.009 kg case) / 8 = 8.875 g; capped to lead-sphere mass 3.646 g,HP,false,8,1,78,"23x75mm ""Shrapnel-25"" buckshot",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ks23_bulk.lua
+eft_ammo_23x75_zvezda,23x75,2.3,0.02,20,override,flash-bang payload estimate (20 g),HP,false,1,0,,"23x75mm ""Zvezda"" flashbang round",2922999549,2922999549/lua/arc9/common/attachments_bulk/eft_ks23_bulk.lua
+eft_ammo_300blk_ap,300blk,0.762,0.0084,8.4,description,8.4 g from description,AP,false,1,48,51,.300 Blackout AP,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_mcx_bulk.lua
+eft_ammo_300blk_bcp,300blk,0.762,0.0094,9.4,description,9.4 g from description,AP,false,1,3,6,.300 Blackout BCP FMJ,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_mcx_bulk.lua
+eft_ammo_300blk_cbj,300blk,0.762,0.0061,6.1,description,6.1 g from description,AP,false,1,43,58,.300 Blackout CBJ,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_mcx_bulk.lua
+eft_ammo_300blk_m62,300blk,0.762,0.0092,9.2,description,9.2 g from description,AP,true,1,36,54,.300 Blackout M62 Tracer,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_mcx_bulk.lua
+eft_ammo_300blk_vmax,300blk,0.762,0.0071,7.1,description,7.1 g from description,HP,false,1,2,72,.300 Blackout V-Max,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_mcx_bulk.lua
+eft_ammo_300blk_whisper,300blk,0.762,0.00675,6.75,ratio,0.015 kg cartridge * 0.45 ratio = 6.75 g,AP,false,1,14,9,.300 Blackout Whisper,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_mcx_bulk.lua
+eft_ammo_308me_lokt,308me,0.782,0.0096,9.6,ratio,0.024 kg cartridge * 0.4 ratio = 9.6 g,AP,false,1,24,96,.308 ME LOKT,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_mxlr_bulk.lua
+eft_ammo_308me_me,308me,0.782,0.0096,9.6,ratio,0.024 kg cartridge * 0.4 ratio = 9.6 g,AP,false,1,42,8,.308 ME,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_mxlr_bulk.lua
+eft_ammo_338_ap,338,0.86,0.0154,15.4,description,15.4 g from description,AP,false,1,79,115,.338 Lapua Magnum AP,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_ammo_338_bulk.lua
+eft_ammo_338_fmj,338,0.86,0.0162,16.2,description,16.2 g from description,AP,false,1,47,122,.338 Lapua Magnum FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_127x55_bulk.lua
+eft_ammo_338_tacx,338,0.86,0.0184,18.4,description,18.4 g from description,HP,false,1,18,196,.338 Lapua Magnum TAC-X,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_ammo_338_bulk.lua
+eft_ammo_338_upz,338,0.86,0.0162,16.2,description,16.2 g from description,AP,false,1,32,142,.338 Lapua Magnum UCW,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_ammo_338_bulk.lua
+eft_ammo_357_fmj,357,0.907,0.0088,8.8,ratio,0.016 kg cartridge * 0.55 ratio = 8.8 g,AP,false,1,35,7,.357 Magnum FMJ,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_357_hp,357,0.907,0.009,9,description,9 g from description,HP,false,1,18,99,.357 Magnum HP,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_357_jhp,357,0.907,0.008,8,description,8 g from description,HP,false,1,24,88,.357 Magnum JHP,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_357_sp,357,0.907,0.007,7,description,7 g from description,HP,false,1,12,108,.357 Magnum SP,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_366_apm,366,0.955,0.016,16,description,16 g from description,AP,false,1,42,9,.366 TKM AP-M,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_366_bulk.lua
+eft_ammo_366_eko,366,0.955,0.006,6,description,6 g from description,AP,false,1,3,73,.366 TKM EKO,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_366_bulk.lua
+eft_ammo_366_fmj,366,0.955,0.013,13,description,13 g from description,AP,false,1,23,98,.366 TKM FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_366_bulk.lua
+eft_ammo_366_geksa,366,0.955,0.0155,15.5,description,15.5 g from description,HP,false,1,14,11,.366 TKM Geksa,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_366_bulk.lua
+eft_ammo_40x46_m381,40x46,4,0.12,120,override,EFT weight comment 0.23 kg; clamped to 0.12 kg,HP,false,1,,,40x46mm M381 (HE) grenade,3010049092,3010049092/lua/arc9/common/attachments_bulk/eft_ammo_40x46_bulk.lua
+eft_ammo_40x46_m386,40x46,4,0.12,120,override,EFT weight comment 0.23 kg; clamped to 0.12 kg,HP,false,1,,,40x46mm M386 (HE) grenade,3010049092,3010049092/lua/arc9/common/attachments_bulk/eft_ammo_40x46_bulk.lua
+eft_ammo_40x46_m406,40x46,4,0.12,120,override,EFT weight comment 0.23 kg; clamped to 0.12 kg,HP,false,1,,,40x46mm M406 (HE) grenade,3010049092,3010049092/lua/arc9/common/attachments_bulk/eft_ammo_40x46_bulk.lua
+eft_ammo_40x46_m433,40x46,4,0.12,120,override,EFT weight comment 0.23 kg; clamped to 0.12 kg,HP,false,1,,,40x46mm M433 (HEDP) grenade,3010049092,3010049092/lua/arc9/common/attachments_bulk/eft_ammo_40x46_bulk.lua
+eft_ammo_40x46_m441,40x46,4,0.12,120,override,EFT weight comment 0.23 kg; clamped to 0.12 kg,HP,false,1,,,40x46mm M441 (HE) grenade,3010049092,3010049092/lua/arc9/common/attachments_bulk/eft_ammo_40x46_bulk.lua
+eft_ammo_40x46_m576,40x46,0.7,0.00156,1.56,override,24-grain (1.56 g) pellet; EFT item description,HP,false,5,,,40x46mm M576 (MP-APERS) grenade,3010049092,3010049092/lua/arc9/common/attachments_bulk/eft_ammo_40x46_bulk.lua
+eft_ammo_40x46_m576_nonubgl,40x46,0.7,0.00156,1.56,override,24-grain (1.56 g) pellet; EFT item description,HP,false,5,5,,40x46mm M576 (MP-APERS) grenade,3010049092,3010049092/lua/arc9/common/attachments_bulk/eft_ammo_40x46_bulk.lua
+eft_ammo_45acp_ap,45acp,1.143,0.00795,7.95,ratio,0.015 kg cartridge * 0.53 ratio = 7.95 g,AP,false,1,38,66,.45 ACP AP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_45acp_bulk.lua
+eft_ammo_45acp_fmj,45acp,1.143,0.0149,14.9,description,14.9 g from description,AP,false,1,25,72,.45 ACP Match FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_45acp_bulk.lua
+eft_ammo_45acp_hydra,45acp,1.143,0.0149,14.9,description,14.9 g from description,HP,false,1,13,1,.45 ACP Hydra-Shok,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_45acp_bulk.lua
+eft_ammo_45acp_laser,45acp,1.143,0.0145,14.5,description,14.5 g from description,AP,false,1,19,76,.45 ACP Lasermatch FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_45acp_bulk.lua
+eft_ammo_45acp_rip,45acp,1.143,0.0105,10.5,description,10.5 g from description,HP,false,1,3,13,.45 ACP RIP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_45acp_bulk.lua
+eft_ammo_4630_actionsx,4630,0.46,0.002,2,description,2 g from description,HP,false,1,18,65,4.6x30mm Action SX,2917344450,2917344450/lua/arc9/common/attachments_bulk/eft_mp7_bulk.lua
+eft_ammo_4630_apsx,4630,0.46,0.002,2,description,2 g from description,AP,false,1,53,35,4.6x30mm AP SX,2917344450,2917344450/lua/arc9/common/attachments_bulk/eft_mp7_bulk.lua
+eft_ammo_4630_fmjsx,4630,0.46,0.0026,2.6,description,2.6 g from description,AP,false,1,4,43,4.6x30mm FMJ SX,2917344450,2917344450/lua/arc9/common/attachments_bulk/eft_mp7_bulk.lua
+eft_ammo_4630_jsp,4630,0.46,0.002592,2.592,grain,40 grain => 2.592 g,HP,false,1,32,46,4.6x30mm JSP SX,2917344450,2917344450/lua/arc9/common/attachments_bulk/eft_mp7_bulk.lua
+eft_ammo_4630_subsonicsx,4630,0.46,0.005,5,description,5 g from description,AP,false,1,23,52,4.6x30mm Subsonic SX,2917344450,2917344450/lua/arc9/common/attachments_bulk/eft_mp7_bulk.lua
+eft_ammo_50ae_bull,50ae,1.27,0.02268,22.68,ratio,0.036 kg cartridge * 0.63 ratio = 22.68 g,AP,false,1,57,113,.50 AE FMJ Bull,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_50ae_copper,50ae,1.27,0.02592,25.92,grain,400 grain => 25.9196 g,AP,false,1,33,94,.50 AE Copper Solid,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_50ae_fmj,50ae,1.27,0.01944,19.44,grain,300 grain => 19.4397 g,AP,false,1,4,85,.50 AE FMJ,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_50ae_jhp,50ae,1.27,0.01944,19.44,grain,300 grain => 19.4397 g,HP,false,1,12,147,.50 AE JHP,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_50ae_jsp,50ae,1.27,0.02592,25.92,grain,400 grain => 25.9196 g,HP,false,1,26,122,.50 AE Hawk JSP,2919110631,2919110631/lua/arc9/common/attachments_bulk/eft_50ae_357_bulk.lua
+eft_ammo_50bmg_hp,50bmg,1.27,0.04902,49.02,ratio,0.114 kg cartridge * 0.43 ratio = 49.02 g,HP,false,1,34,26,.50 BMG HP,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_ammo_338_bulk.lua
+eft_ammo_50bmg_m21,50bmg,1.27,0.05203,52.03,ratio,0.121 kg cartridge * 0.43 ratio = 52.03 g,AP,true,1,45,22,.50 BMG M21,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_ammo_338_bulk.lua
+eft_ammo_50bmg_m33,50bmg,1.27,0.04601,46.01,ratio,0.107 kg cartridge * 0.43 ratio = 46.01 g,AP,false,1,56,19,.50 BMG M33,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_ammo_338_bulk.lua
+eft_ammo_50bmg_m903,50bmg,1.27,0.04429,44.29,ratio,0.103 kg cartridge * 0.43 ratio = 44.29 g,AP,false,1,115,16,.50 BMG M903,2924902340,2924902340/lua/arc9/common/attachments_bulk/eft_ammo_338_bulk.lua
+eft_ammo_545_7n40,545,0.545,0.0042,4.2,description,4.2 g from description,AP,false,1,42,55,5.45x39mm 7N40,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_bp,545,0.545,0.0037,3.7,description,3.7 g from description,AP,false,1,45,48,5.45x39mm BP gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_bs,545,0.545,0.0041,4.1,description,4.1 g from description,AP,false,1,54,45,5.45x39mm BS gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_bt,545,0.545,0.0031,3.1,description,3.1 g from description,AP,true,1,37,54,5.45x39mm BT gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_fmj,545,0.545,0.0039,3.9,description,3.9 g from description,AP,false,1,24,55,5.45x39mm FMJ,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_hp,545,0.545,0.0036,3.6,description,3.6 g from description,HP,false,1,9,76,5.45x39mm HP,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_pp,545,0.545,0.0035,3.5,description,3.5 g from description,AP,false,1,34,51,5.45x39mm PP gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_ppbs,545,0.545,0.004,4,description,4 g from description,AP,false,1,62,37,"5.45x39mm PPBS gs ""Igolnik""",2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_prs,545,0.545,0.0039,3.9,description,3.9 g from description,AP,false,1,13,7,5.45x39mm PRS gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_ps,545,0.545,0.0034,3.4,description,3.4 g from description,AP,false,1,28,56,5.45x39mm PS gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_sp,545,0.545,0.0036,3.6,description,3.6 g from description,HP,false,1,15,67,5.45x39mm SP,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_t,545,0.545,0.0032,3.2,description,3.2 g from description,AP,true,1,2,59,5.45x39mm T gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_545_us,545,0.545,0.0051,5.1,description,5.1 g from description,AP,false,1,17,65,5.45x39mm US,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_ammo_545_bulk.lua
+eft_ammo_556_bb,556bb,0.6,0.0002,0.2,description,0.2 g from description,HP,false,1,1,,Airsoft 6mm BB,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_fmj,556,0.556,0.0036,3.6,description,3.6 g from description,AP,false,1,23,57,5.56x45mm FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_hp,556,0.556,0.0036,3.6,description,3.6 g from description,HP,false,1,7,79,5.56x45mm HP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_m855,556,0.556,0.004,4,description,4 g from description,AP,false,1,31,54,5.56x45mm M855,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_m855a1,556,0.556,0.004,4,description,4 g from description,AP,false,1,44,49,5.56x45mm M855A1,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_m856,556,0.556,0.0041,4.1,description,4.1 g from description,AP,true,1,18,6,5.56x45mm M856,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_m856a1,556,0.556,0.0036,3.6,description,3.6 g from description,AP,true,1,38,52,5.56x45mm M856A1,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_m995,556,0.556,0.0034,3.4,description,3.4 g from description,AP,false,1,53,42,5.56x45mm M995,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_rrlp,556,0.556,0.004,4,description,4 g from description,AP,false,1,11,72,5.56x45mm MK 255 Mod 0 (RRLP),2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_sost,556,0.556,0.004,4,description,4 g from description,AP,false,1,33,53,5.56x45mm MK 318 Mod 0 (SOST),2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_ssaap,556,0.556,0.00416,4.16,ratio,0.013 kg cartridge * 0.32 ratio = 4.16 g,AP,false,1,57,38,5.56x45mm SSA AP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_556_warma,556,0.556,0.0036,3.6,description,3.6 g from description,HP,false,1,3,88,5.56x45mm Warmageddon,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_556_bulk.lua
+eft_ammo_57_l191,57,0.57,0.0021,2.1,description,2.1 g from description,AP,true,1,33,53,5.7x28mm L191 (tracer),2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_57_bulk.lua
+eft_ammo_57_r37f,57,0.57,0.0024,2.4,description,2.4 g from description,HP,false,1,8,98,5.7x28mm R37.F,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_57_bulk.lua
+eft_ammo_57_r37x,57,0.57,0.0024,2.4,description,2.4 g from description,AP,false,1,11,81,5.7x28mm R37.X,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_57_bulk.lua
+eft_ammo_57_sb193,57,0.57,0.004,4,description,4 g from description,AP,false,1,27,59,5.7x28mm SB193 (Subsonic),2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_57_bulk.lua
+eft_ammo_57_ss190,57,0.57,0.002,2,description,2 g from description,AP,false,1,37,49,5.7x28mm SS190,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_57_bulk.lua
+eft_ammo_57_ss197sr,57,0.57,0.0026,2.6,description,2.6 g from description,HP,false,1,25,62,5.7x28mm SS197SR,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_57_bulk.lua
+eft_ammo_57_ss198lf,57,0.57,0.0018,1.8,description,1.8 g from description,AP,false,1,17,7,5.7x28mm SS198LF,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_57_bulk.lua
+eft_ammo_58x42_c12,58x42,0.58,0.004384,4.384,ratio,0.0137 kg cartridge * 0.32 ratio = 4.384 g,AP,false,1,52,46,5.8x42mm DVC12,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_qbz_bulk.lua
+eft_ammo_58x42_fmj,58x42,0.58,0.004,4,ratio,0.0125 kg cartridge * 0.32 ratio = 4 g,AP,false,1,39,53,5.8x42mm DBP191,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_qbz_bulk.lua
+eft_ammo_58x42_x12,58x42,0.58,0.00416,4.16,ratio,0.013 kg cartridge * 0.32 ratio = 4.16 g,AP,true,1,47,48,5.8x42mm DVX12,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_qbz_bulk.lua
+eft_ammo_58x42_x95,58x42,0.58,0.003872,3.872,ratio,0.0121 kg cartridge * 0.32 ratio = 3.872 g,AP,true,1,33,57,5.8x42mm DBX95,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_qbz_bulk.lua
+eft_ammo_68x51_fmj,68x51,0.68,0.008748,8.748,grain,135 grain => 8.7479 g,AP,false,1,36,8,6.8x51mm SIG FMJ,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_spear_bulk.lua
+eft_ammo_68x51_hybrid,68x51,0.68,0.01008,10.08,ratio,0.024 kg cartridge * 0.42 ratio = 10.08 g,AP,false,1,47,72,6.8x51mm SIG Hybrid,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_spear_bulk.lua
+eft_ammo_76239_bp,76239,0.762,0.0079,7.9,description,7.9 g from description,AP,false,1,47,58,7.62x39mm BP gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_fmj,76239,0.762,0.00588,5.88,ratio,0.012 kg cartridge * 0.49 ratio = 5.88 g,AP,false,1,26,63,7.62x39mm FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_hp,76239,0.762,0.008,8,description,8 g from description,HP,false,1,15,8,7.62x39mm HP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_maiap,76239,0.762,0.00735,7.35,ratio,0.015 kg cartridge * 0.49 ratio = 7.35 g,AP,false,1,58,53,7.62x39mm MAI AP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_pp,76239,0.762,0.00784,7.84,ratio,0.016 kg cartridge * 0.49 ratio = 7.84 g,AP,false,1,41,59,7.62x39mm PP gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_ps,76239,0.762,0.0079,7.9,description,7.9 g from description,AP,false,1,35,61,7.62x39mm PS gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_sp,76239,0.762,0.008,8,description,8 g from description,HP,false,1,2,68,7.62x39mm SP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_t45m1,76239,0.762,0.0076,7.6,description,7.6 g from description,AP,true,1,3,65,7.62x39mm T-45M1 gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_76239_us,76239,0.762,0.0126,12.6,description,12.6 g from description,AP,false,1,29,56,7.62x39mm US gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x39_bulk.lua
+eft_ammo_762x25tt_akbs,762x25tt,0.762,0.0055,5.5,description,5.5 g from description,AP,false,1,12,58,7.62x25mm TT AKBS,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_fmj,762x25tt,0.762,0.0055,5.5,ratio,0.01 kg cartridge * 0.55 ratio = 5.5 g,AP,false,1,11,6,7.62x25mm TT FMJ43,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_lrn,762x25tt,0.762,0.0055,5.5,ratio,0.01 kg cartridge * 0.55 ratio = 5.5 g,HP,false,1,8,64,7.62x25mm TT LRN,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_lrnpc,762x25tt,0.762,0.0055,5.5,ratio,0.01 kg cartridge * 0.55 ratio = 5.5 g,HP,false,1,7,66,7.62x25mm TT LRNPC,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_m855a1,762x25tt,0.762,0.004,4,description,4 g from description,AP,false,1,31,34,7.62x25mm TT M855A1,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_m856a1,762x25tt,0.762,0.0036,3.6,description,3.6 g from description,AP,true,1,27,36,7.62x25mm TT M856A1,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_m995,762x25tt,0.762,0.0034,3.4,description,3.4 g from description,AP,false,1,37,32,7.62x25mm TT M995,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_p,762x25tt,0.762,0.0055,5.5,description,5.5 g from description,AP,false,1,14,58,7.62x25mm TT P gl,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_pst,762x25tt,0.762,0.0054,5.4,description,5.4 g from description,AP,false,1,25,5,7.62x25mm TT Pst gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x25tt_pt,762x25tt,0.762,0.0058,5.8,description,5.8 g from description,AP,true,1,18,55,7.62x25mm TT PT gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x25tt_bulk.lua
+eft_ammo_762x51_bpzfmj,762x51,0.762,0.0109,10.9,description,10.9 g from description,AP,false,1,37,83,7.62x51mm BCP FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x51_m61,762x51,0.762,0.0098,9.8,description,9.8 g from description,AP,false,1,6,73,7.62x51mm M61,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x51_m62t,762x51,0.762,0.0092,9.2,description,9.2 g from description,AP,true,1,42,82,7.62x51mm M62 Tracer,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x51_m80,762x51,0.762,0.0095,9.5,description,9.5 g from description,AP,false,1,43,8,7.62x51mm M80,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x51_m80a1,762x51,0.762,0.008035,8.035,grain,124 grain => 8.0351 g,AP,false,1,55,75,7.62x51mm M80A1,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x51_m993,762x51,0.762,0.0082,8.2,description,8.2 g from description,AP,false,1,65,7,7.62x51mm M993,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x51_tpzsp,762x51,0.762,0.0107,10.7,description,10.7 g from description,HP,false,1,3,85,7.62x51mm TCW SP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x51_ultranosler,762x51,0.762,0.0106,10.6,description,10.6 g from description,AP,false,1,15,105,7.62x51mm Ultra Nosler,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x51_bulk.lua
+eft_ammo_762x54r_bs_gzh,762x54r,0.762,0.0122,12.2,description,12.2 g from description,AP,false,1,7,72,7.62x54mm R BS gs,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_bt_gzh,762x54r,0.762,0.0092,9.2,description,9.2 g from description,AP,true,1,55,78,7.62x54mm R BT gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_fmj,762x54r,0.762,0.0096,9.6,ratio,0.024 kg cartridge * 0.4 ratio = 9.6 g,AP,false,1,36,84,7.62x54mm R FMJ,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_hpbt,762x54r,0.762,0.0096,9.6,ratio,0.024 kg cartridge * 0.4 ratio = 9.6 g,HP,false,1,26,102,7.62x54mm R HP BT,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_lps_gzh,762x54r,0.762,0.0096,9.6,description,9.6 g from description,AP,false,1,42,81,7.62x54mm R LPS gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_ps_gzh,762x54r,0.762,0.0098,9.8,description,9.8 g from description,AP,false,1,45,84,7.62x54mm R PS gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_snb_gzh,762x54r,0.762,0.0098,9.8,description,9.8 g from description,AP,false,1,62,75,7.62x54mm R SNB gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_spbt,762x54r,0.762,0.011664,11.664,grain,180 grain => 11.6638 g,HP,false,1,31,92,7.62x54mm R SP BT,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_762x54r_t46m_gzh,762x54r,0.762,0.0096,9.6,description,9.6 g from description,AP,true,1,41,82,7.62x54mm R T-46M gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_762x54r_bulk.lua
+eft_ammo_93x64_7n33,93x64,0.93,0.0174,17.4,description,17.4 g from description,AP,false,1,56,108,9.3x64mm 7N33,2976665920,2976665920/lua/arc9/common/attachments_bulk/eft_svds_bulk.lua
+eft_ammo_93x64_fmj,93x64,0.93,0.0175,17.5,description,17.5 g from description,AP,false,1,44,115,9.3x64mm FMJ,2976665920,2976665920/lua/arc9/common/attachments_bulk/eft_svds_bulk.lua
+eft_ammo_93x64_sp,93x64,0.93,0.0174,17.4,description,17.4 g from description,HP,false,1,37,129,9.3x64mm SP,2976665920,2976665920/lua/arc9/common/attachments_bulk/eft_svds_bulk.lua
+eft_ammo_9x18_bzht,9x18,0.9,0.005,5,description,5 g from description,AP,false,1,18,53,9x18mm PM BZhT gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_p,9x18,0.9,0.0061,6.1,description,6.1 g from description,HP,false,1,5,5,9x18mm PM P gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_pbm,9x18,0.9,0.0037,3.7,description,3.7 g from description,AP,false,1,28,4,9x18mm PM PBM gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_ppe,9x18,0.9,0.0076,7.6,description,7.6 g from description,HP,false,1,7,61,9x18mm PM PPe gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_ppt,9x18,0.9,0.0036,3.6,description,3.6 g from description,HP,true,1,8,59,9x18mm PM PPT gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_prs,9x18,0.9,0.0061,6.1,description,6.1 g from description,HP,false,1,6,58,9x18mm PM PRS gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_pso,9x18,0.9,0.0061,6.1,description,6.1 g from description,HP,false,1,5,54,9x18mm PM PSO gs,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_psppo,9x18,0.9,0.0063,6.3,description,6.3 g from description,HP,false,1,6,55,9x18mm PM PS gs PPO,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_pst,9x18,0.9,0.0059,5.9,description,5.9 g from description,AP,false,1,12,5,9x18mm PM Pst gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_pstm,9x18,0.9,0.0056,5.6,description,5.6 g from description,AP,false,1,24,58,9x18mm PM PstM gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_psv,9x18,0.9,0.0075,7.5,description,7.5 g from description,HP,false,1,3,69,9x18mm PM PSV,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_rg028,9x18,0.9,0.006,6,description,6 g from description,HP,false,1,13,65,9x18mm PM RG028 gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_sp7,9x18,0.9,0.0052,5.2,description,5.2 g from description,HP,false,1,2,77,9x18mm PM SP7 gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x18_sp8,9x18,0.9,0.0039,3.9,description,3.9 g from description,HP,false,1,1,67,9x18mm PM SP8 gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x18_bulk.lua
+eft_ammo_9x19_ap63,9x19,0.9,0.00522,5.22,ratio,0.009 kg cartridge * 0.58 ratio = 5.22 g,AP,false,1,3,52,9x19mm AP 6.3,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_fmj_m882,9x19,0.9,0.008035,8.035,grain,124 grain => 8.0351 g,AP,false,1,18,56,9x19mm FMJ M882,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_luger_cci,9x19,0.9,0.0087,8.7,ratio,0.015 kg cartridge * 0.58 ratio = 8.7 g,HP,false,1,1,7,9x19mm Luger CCI,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_pbp_gzh,9x19,0.9,0.0041,4.1,description,4.1 g from description,AP,false,1,39,44,9x19mm PBP gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_pso_ghz,9x19,0.9,0.0075,7.5,description,7.5 g from description,HP,false,1,1,59,9x19mm PSO gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_pst_gzh,9x19,0.9,0.0054,5.4,description,5.4 g from description,AP,false,1,2,54,9x19mm Pst gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_quake,9x19,0.9,0.0119,11.9,description,11.9 g from description,HP,false,1,8,85,9x19mm QuakeMaker,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_rip,9x19,0.9,0.006,6,description,6 g from description,HP,false,1,2,102,9x19mm RIP,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x19_tracer,9x19,0.9,0.00348,3.48,ratio,0.006 kg cartridge * 0.58 ratio = 3.48 g,AP,true,1,14,58,9x19mm Green Tracer,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x19_bulk.lua
+eft_ammo_9x21_7n42,9x21,0.9,0.00605,6.05,ratio,0.011 kg cartridge * 0.55 ratio = 6.05 g,AP,false,1,38,49,"9x21mm 7N42 ""Zubilo""",2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x21_bulk.lua
+eft_ammo_9x21_7u4,9x21,0.9,0.00825,8.25,ratio,0.015 kg cartridge * 0.55 ratio = 8.25 g,AP,false,1,27,53,9x21mm 7U4,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x21_bulk.lua
+eft_ammo_9x21_bt,9x21,0.9,0.0073,7.3,description,7.3 g from description,AP,true,1,32,52,9x21mm BT gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x21_bulk.lua
+eft_ammo_9x21_p,9x21,0.9,0.0075,7.5,description,7.5 g from description,AP,false,1,18,65,9x21mm P gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x21_bulk.lua
+eft_ammo_9x21_pe,9x21,0.9,0.0057,5.7,description,5.7 g from description,HP,false,1,15,8,9x21mm PE gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x21_bulk.lua
+eft_ammo_9x21_ps,9x21,0.9,0.0067,6.7,description,6.7 g from description,AP,false,1,22,59,9x21mm PS gzh,2917343547,2917343547/lua/arc9/common/attachments_bulk/eft_ammo_9x21_bulk.lua
+eft_ammo_9x39_bp,9x39,0.9,0.0155,15.5,description,15.5 g from description,AP,false,1,54,58,9x39mm BP gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_val_bulk.lua
+eft_ammo_9x39_fmj,9x39,0.9,0.0115,11.5,ratio,0.023 kg cartridge * 0.5 ratio = 11.5 g,AP,false,1,17,75,9x39mm FMJ,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_val_bulk.lua
+eft_ammo_9x39_pab9,9x39,0.9,0.0172,17.2,description,17.2 g from description,AP,false,1,43,62,9x39mm PAB-9 gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_val_bulk.lua
+eft_ammo_9x39_sp5,9x39,0.9,0.016,16,description,16 g from description,AP,false,1,28,71,9x39mm SP-5 gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_val_bulk.lua
+eft_ammo_9x39_sp6,9x39,0.9,0.016,16,description,16 g from description,AP,false,1,48,6,9x39mm SP-6 gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_val_bulk.lua
+eft_ammo_9x39_spp,9x39,0.9,0.0157,15.7,description,15.7 g from description,AP,false,1,35,68,9x39mm SPP gs,2962829818,2962829818/lua/arc9/common/attachments_bulk/eft_val_bulk.lua
